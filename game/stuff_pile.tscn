@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c03or844dipbl"]
+
+[ext_resource type="Texture2D" uid="uid://c28arijen45xq" path="res://assets/spritesheet.png" id="1_dlyyf"]
+[ext_resource type="Script" uid="uid://vft6nhde7v2v" path="res://game/stuff_pile.gd" id="2_sl2nx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fuuu"]
+atlas = ExtResource("1_dlyyf")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dxrkv"]
+radius = 14.0
+
+[node name="StuffPile" type="Sprite2D" unique_id=1042835643]
+texture = SubResource("AtlasTexture_4fuuu")
+script = ExtResource("2_sl2nx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1397785118]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2049525313]
+shape = SubResource("CircleShape2D_dxrkv")

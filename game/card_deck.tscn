@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c3a1xyyuetwwp"]
+
+[ext_resource type="Script" uid="uid://bf54b1krq5wfb" path="res://game/card_deck.gd" id="1_pb671"]
+[ext_resource type="Theme" uid="uid://cgjvjqn1sdmfn" path="res://main_theme.tres" id="1_tjxuu"]
+
+[node name="CardDeck" type="Control" unique_id=905005102]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 360.0
+offset_top = 202.0
+offset_right = 360.0
+offset_bottom = 202.0
+script = ExtResource("1_pb671")
+
+[node name="Panel" type="Panel" parent="." unique_id=1915483981]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 60.0
+theme = ExtResource("1_tjxuu")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1178759900]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 63.0
+theme = ExtResource("1_tjxuu")
+
+[node name="PullCard" type="Button" parent="." unique_id=1907284894]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 46.0
+offset_bottom = 66.0
+theme = ExtResource("1_tjxuu")
+text = "GMTK
+2026"
+expand_icon = true
+
+[node name="Timer" type="Timer" parent="." unique_id=598117508]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="PullCard" to="." method="_on_pull_card_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

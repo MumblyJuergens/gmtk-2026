@@ -8,9 +8,17 @@
 atlas = ExtResource("2_5ol3u")
 region = Rect2(0, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_punpq"]
+atlas = ExtResource("2_5ol3u")
+region = Rect2(0, 16, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuk70"]
 atlas = ExtResource("2_5ol3u")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ol3u"]
+atlas = ExtResource("2_5ol3u")
+region = Rect2(16, 16, 16, 16)
 
 [node name="CardUI" type="Panel" unique_id=1235242046]
 custom_minimum_size = Vector2(40, 60)
@@ -49,6 +57,7 @@ offset_top = 3.0
 offset_right = 20.0
 offset_bottom = 19.0
 texture_normal = SubResource("AtlasTexture_rh6aq")
+texture_hover = SubResource("AtlasTexture_punpq")
 
 [node name="Nope" type="TextureButton" parent="." unique_id=1192573245]
 layout_mode = 0
@@ -57,6 +66,7 @@ offset_top = 3.0
 offset_right = 36.0
 offset_bottom = 19.0
 texture_normal = SubResource("AtlasTexture_xuk70")
+texture_hover = SubResource("AtlasTexture_5ol3u")
 
-[connection signal="pressed" from="Yep" to="." method="_on_yep_pressed"]
-[connection signal="pressed" from="Nope" to="." method="_on_nope_pressed"]
+[connection signal="pressed" from="Yep" to="." method="use"]
+[connection signal="pressed" from="Nope" to="." method="discard"]

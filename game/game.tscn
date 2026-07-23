@@ -4,9 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://8hl4v5gnqm5f" path="res://game/game_timer.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://bxptc5khbgcx0" path="res://game/hand.tscn" id="3_4fuuu"]
 [ext_resource type="PackedScene" uid="uid://dg0txlcax2va6" path="res://game/stats_display.tscn" id="4_4fuuu"]
+[ext_resource type="PackedScene" uid="uid://c3a1xyyuetwwp" path="res://game/card_deck.tscn" id="5_dxrkv"]
 
 [node name="Game" type="Node2D" unique_id=1960160855]
 script = ExtResource("1_l1rk1")
+
+[node name="StuffPiles" type="Node2D" parent="." unique_id=789662083]
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1726702326]
 
@@ -18,3 +21,5 @@ unique_name_in_owner = true
 
 [node name="StatsDisplay" parent="GameUI" unique_id=296256293 instance=ExtResource("4_4fuuu")]
 unique_name_in_owner = true
+
+[node name="CardDeck" parent="GameUI" unique_id=905005102 instance=ExtResource("5_dxrkv")]

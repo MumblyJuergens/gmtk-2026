@@ -13,13 +13,12 @@ func _ready() -> void:
 	
 	what.text = enum_text
 	amount.text = "%s%2.2f" % [op, card_data.amount]
-
-
-func _on_yep_pressed() -> void:
+	
+func use() -> void:
 	EventBus.card_used.emit(card_data)
 	queue_free()
 
 
-func _on_nope_pressed() -> void:
+func discard() -> void:
 	EventBus.card_discarded.emit(card_data)
 	queue_free()

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SharedJunk="*uid://dxh2sks0wxtoq"
 EventBus="*uid://c8pic2n3gf32e"
 
 [debug]

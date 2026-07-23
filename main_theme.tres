@@ -1,9 +1,18 @@
 [gd_resource type="Theme" format=3 uid="uid://cgjvjqn1sdmfn"]
 
 [ext_resource type="FontFile" uid="uid://0pk10em1s1m4" path="res://fonts/fusion-pixel-10px-proportional-kr-latin-400-normal.woff2" id="1_470mv"]
+[ext_resource type="StyleBox" uid="uid://c6jhvuufmvjd4" path="res://styles/basic_style_box_flat.tres" id="1_a2l2q"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbqtk"]
-bg_color = Color(0.38039216, 0.67058825, 0.5137255, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0omi4"]
+bg_color = Color(0.19711813, 0.4103323, 0.34041142, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6036922, 0.8778732, 0.7220964, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58jnp"]
+bg_color = Color(0.41247874, 0.7064175, 0.505874, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -13,4 +22,9 @@ border_color = Color(0.6036922, 0.8778732, 0.7220964, 1)
 [resource]
 default_font = ExtResource("1_470mv")
 default_font_size = 10
-Panel/styles/panel = SubResource("StyleBoxFlat_hbqtk")
+Button/styles/disabled = SubResource("StyleBoxFlat_0omi4")
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxFlat_58jnp")
+Button/styles/normal = ExtResource("1_a2l2q")
+Button/styles/pressed = null
+Panel/styles/panel = ExtResource("1_a2l2q")
