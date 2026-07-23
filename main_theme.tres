@@ -2,6 +2,15 @@
 
 [ext_resource type="FontFile" uid="uid://0pk10em1s1m4" path="res://fonts/fusion-pixel-10px-proportional-kr-latin-400-normal.woff2" id="1_470mv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbqtk"]
+bg_color = Color(0.38039216, 0.67058825, 0.5137255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6036922, 0.8778732, 0.7220964, 1)
+
 [resource]
 default_font = ExtResource("1_470mv")
 default_font_size = 10
+Panel/styles/panel = SubResource("StyleBoxFlat_hbqtk")
