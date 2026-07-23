@@ -7,9 +7,6 @@ extends Panel
 @onready var _round_timer: Timer = $RoundTimer
 @onready var _use_timer: Timer = $UseTimer
 
-const ROUND_DURATION: float = 120.0
-const USE_DURATION: float = 5.0
-
 var stats: Stats
 
 func start() -> void:
@@ -19,8 +16,8 @@ func start() -> void:
 		_round_timer.timeout.connect(_on_round_timer_timeout)
 	if not _use_timer.timeout.is_connected(_on_use_timer_timeout):
 		_use_timer.timeout.connect(_on_use_timer_timeout)
-	_round_timer.start(ROUND_DURATION)
-	_use_timer.start(USE_DURATION)
+	_round_timer.start(Config.GAME_TIMER_ROUND_DURATION)
+	_use_timer.start(Config.GAME_TIMER_USE_DURATION)
 
 func stop() -> void:
 	_round_timer.stop()
@@ -40,5 +37,5 @@ func _on_round_timer_timeout() -> void:
 	EventBus.timer_done_round.emit()
 	
 func _on_use_timer_timeout() -> void:
-	_use_timer.start(USE_DURATION)
+	_use_timer.start(Config.GAME_TIMER_USE_DURATION)
 	EventBus.timer_done_card_use.emit()

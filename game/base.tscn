@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cvn2wdwh1jb47"]
+
+[ext_resource type="Texture2D" uid="uid://c28arijen45xq" path="res://assets/spritesheet.png" id="1_6afe8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbqtk"]
+atlas = ExtResource("1_6afe8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uob17"]
+height = 24.0
+
+[node name="Base" type="Sprite2D" unique_id=2012944100]
+texture = SubResource("AtlasTexture_hbqtk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1154234579]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1674973426]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_uob17")

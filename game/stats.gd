@@ -15,7 +15,7 @@ func apply_card(card_data: CardData) -> void:
 		CardData.EffectOp.MULTIPLY: op = _multiply_me
 	match card_data.effect:
 		CardData.Effect.SPEED: speed = op.call(speed, card_data.amount)
-		CardData.Effect.STENGTH: strength = op.call(strength, card_data.amount)
+		CardData.Effect.STRENGTH: strength = op.call(strength, card_data.amount)
 		CardData.Effect.DEFENCE: defence = op.call(defence, card_data.amount)
 		CardData.Effect.SPAWN_SPEED: spawn_speed = op.call(spawn_speed, card_data.amount)
 		CardData.Effect.SPAWN_COST: spawn_cost = op.call(spawn_cost, card_data.amount)

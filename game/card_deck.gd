@@ -3,8 +3,6 @@ extends Control
 @onready var pull_card: Button = %PullCard
 @onready var timer: Timer = %Timer
 
-const WAIT_TIME := 2.0
-
 func _ready() -> void:
 	EventBus.card_pull_wait.connect(_on_card_pull_wait)
 
@@ -17,7 +15,7 @@ func _on_pull_card_pressed() -> void:
 
 func _on_card_pull_wait() -> void:
 	pull_card.disabled = true
-	timer.start(WAIT_TIME)
+	timer.start(Config.CARD_DECK_PULL_WAIT_TIME)
 	
 func _on_timer_timeout() -> void:
 	pull_card.disabled = false

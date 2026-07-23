@@ -2,7 +2,6 @@ class_name Hand
 extends HBoxContainer
 
 const CARD_UI = preload("uid://dbqqioutkatvs")
-const CARD_DRAW_INTERVAL := 0.25
 
 func spawn_card(card_data: CardData) -> void:
 	var card_ui: CardUI = CARD_UI.instantiate()
@@ -13,7 +12,7 @@ func draw_cards() -> void:
 	var tween := create_tween()
 	for _i in range(Config.CARD_COUNT - get_child_count()):
 		tween.tween_callback(draw_card)
-		tween.tween_interval(CARD_DRAW_INTERVAL)
+		tween.tween_interval(Config.HAND_CARD_DRAW_INTERVAL)
 
 func draw_card() -> void:
 	if get_child_count() >= Config.CARD_COUNT:

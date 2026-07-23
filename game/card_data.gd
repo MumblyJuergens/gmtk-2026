@@ -1,6 +1,6 @@
 class_name CardData
 
-enum Effect { SPEED, STENGTH, DEFENCE, SPAWN_SPEED, SPAWN_COST, TIMER_SPEED, }
+enum Effect { SPEED, STRENGTH, DEFENCE, SPAWN_SPEED, SPAWN_COST, TIMER_SPEED, }
 enum EffectOp { ADD, MULTIPLY, }
 
 var effect: Effect
@@ -44,7 +44,7 @@ static var _total_weight_effect: float = 0.0
 static var _total_weight_effect_op: float = 0.0
 static var _effect_chances: Array[WeightedEffect] = [
 	WeightedEffect.new(Effect.SPEED, 1.0),
-	WeightedEffect.new(Effect.STENGTH, 1.0),
+	WeightedEffect.new(Effect.STRENGTH, 1.0),
 	WeightedEffect.new(Effect.DEFENCE, 1.0),
 	WeightedEffect.new(Effect.SPAWN_SPEED, 1.0),
 	WeightedEffect.new(Effect.SPAWN_COST, 1.0),
