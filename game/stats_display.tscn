@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dg0txlcax2va6"]
+
+[ext_resource type="Theme" uid="uid://cgjvjqn1sdmfn" path="res://main_theme.tres" id="1_akwci"]
+[ext_resource type="Script" uid="uid://o1ft6objsn2x" path="res://game/stats_display.gd" id="2_yxo0d"]
+
+[node name="StatsDisplay" type="Panel" unique_id=296256293]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 135.0
+theme = ExtResource("1_akwci")
+script = ExtResource("2_yxo0d")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1307041661]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=270555970]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/GridContainer" unique_id=310771440]
+layout_mode = 2
+text = "Speed"
+horizontal_alignment = 2
+
+[node name="SpeedLabel" type="Label" parent="MarginContainer/GridContainer" unique_id=1453565794]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.00"
+
+[node name="Label4" type="Label" parent="MarginContainer/GridContainer" unique_id=1028383231]
+layout_mode = 2
+text = "Strength"
+horizontal_alignment = 2
+
+[node name="StrengthLabel" type="Label" parent="MarginContainer/GridContainer" unique_id=598354314]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.00"
+
+[node name="Label6" type="Label" parent="MarginContainer/GridContainer" unique_id=1079216218]
+layout_mode = 2
+text = "Defence"
+horizontal_alignment = 2
+
+[node name="DefenceLabel" type="Label" parent="MarginContainer/GridContainer" unique_id=1233851792]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.00"
+
+[node name="Label8" type="Label" parent="MarginContainer/GridContainer" unique_id=1003749891]
+layout_mode = 2
+text = "Spawn Speed"
+horizontal_alignment = 2
+
+[node name="SpawnSpeedLabel" type="Label" parent="MarginContainer/GridContainer" unique_id=456482044]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.00"
+
+[node name="Label10" type="Label" parent="MarginContainer/GridContainer" unique_id=644257500]
+layout_mode = 2
+text = "Spawn Cost"
+horizontal_alignment = 2
+
+[node name="SpawnCostLabel" type="Label" parent="MarginContainer/GridContainer" unique_id=1490662510]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.00"
+
+[node name="Label12" type="Label" parent="MarginContainer/GridContainer" unique_id=282853430]
+layout_mode = 2
+text = "Timer Speed"
+horizontal_alignment = 2
+
+[node name="TimerSpeedLabel" type="Label" parent="MarginContainer/GridContainer" unique_id=1625807983]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.00"

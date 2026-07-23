@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://5cxcmvt8r66o" path="res://game/game.gd" id="1_l1rk1"]
 [ext_resource type="PackedScene" uid="uid://8hl4v5gnqm5f" path="res://game/game_timer.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://bxptc5khbgcx0" path="res://game/hand.tscn" id="3_4fuuu"]
+[ext_resource type="PackedScene" uid="uid://dg0txlcax2va6" path="res://game/stats_display.tscn" id="4_4fuuu"]
 
 [node name="Game" type="Node2D" unique_id=1960160855]
 script = ExtResource("1_l1rk1")
@@ -13,4 +14,7 @@ script = ExtResource("1_l1rk1")
 unique_name_in_owner = true
 
 [node name="Hand" parent="GameUI" unique_id=2121167984 instance=ExtResource("3_4fuuu")]
+unique_name_in_owner = true
+
+[node name="StatsDisplay" parent="GameUI" unique_id=296256293 instance=ExtResource("4_4fuuu")]
 unique_name_in_owner = true

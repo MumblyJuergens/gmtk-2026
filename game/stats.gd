@@ -10,10 +10,10 @@ var timer_speed: float = 1.0
 func apply_card(card_data: CardData) -> void:
 	# TODO: Extensible with OOP or whatever
 	var op: Callable
-	match card_data.EffectOp:
-		CardData.EffectOp.ADD: op = _add
-		CardData.EffectOp.MULTIPLY: op = _multiply
-	match card_data.Effect:
+	match card_data.effect_op:
+		CardData.EffectOp.ADD: op = _add_me
+		CardData.EffectOp.MULTIPLY: op = _multiply_me
+	match card_data.effect:
 		CardData.Effect.SPEED: speed = op.call(speed, card_data.amount)
 		CardData.Effect.STENGTH: strength = op.call(strength, card_data.amount)
 		CardData.Effect.DEFENCE: defence = op.call(defence, card_data.amount)
@@ -22,8 +22,8 @@ func apply_card(card_data: CardData) -> void:
 		CardData.Effect.TIMER_SPEED: timer_speed = op.call(timer_speed, card_data.amount)
 	EventBus.stats_changed.emit()
 
-func _add(variable: float, amount: float) -> float:
+func _add_me(variable: float, amount: float) -> float:
 	return variable + amount
 
-func _multiply(variable: float, amount: float) -> float:
+func _multiply_me(variable: float, amount: float) -> float:
 	return variable * amount
