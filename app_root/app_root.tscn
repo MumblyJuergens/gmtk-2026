@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ctae7kpgvna66"]
+
+[ext_resource type="Script" uid="uid://yu8vnraw2f12" path="res://app_root/app_root.gd" id="1_wfrj6"]
+
+[node name="AppRoot" type="Node2D" unique_id=1848737791]
+script = ExtResource("1_wfrj6")
+
+[node name="SceneHolder" type="CanvasLayer" parent="." unique_id=57592761]

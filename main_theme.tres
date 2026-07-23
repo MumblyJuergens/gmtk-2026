@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cgjvjqn1sdmfn"]
+
+[ext_resource type="FontFile" uid="uid://0pk10em1s1m4" path="res://fonts/fusion-pixel-10px-proportional-kr-latin-400-normal.woff2" id="1_470mv"]
+
+[resource]
+default_font = ExtResource("1_470mv")
+default_font_size = 10
