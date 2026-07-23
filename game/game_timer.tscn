@@ -38,3 +38,7 @@ layout_mode = 2
 text = "00:05"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RoundTimer" type="Timer" parent="." unique_id=984482017]
+
+[node name="UseTimer" type="Timer" parent="." unique_id=669707108]

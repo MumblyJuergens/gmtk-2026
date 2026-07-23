@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dbqqioutkatvs"]
+
+[ext_resource type="Theme" uid="uid://cgjvjqn1sdmfn" path="res://main_theme.tres" id="1_exmvx"]
+[ext_resource type="Texture2D" uid="uid://c28arijen45xq" path="res://assets/spritesheet.png" id="2_5ol3u"]
+[ext_resource type="Script" uid="uid://bn1wjnyq8s0u6" path="res://game/card_ui.gd" id="2_xuk70"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh6aq"]
+atlas = ExtResource("2_5ol3u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuk70"]
+atlas = ExtResource("2_5ol3u")
+region = Rect2(16, 0, 16, 16)
+
+[node name="CardUI" type="Panel" unique_id=1235242046]
+custom_minimum_size = Vector2(40, 60)
+offset_right = 40.0
+offset_bottom = 60.0
+theme = ExtResource("1_exmvx")
+script = ExtResource("2_xuk70")
+
+[node name="What" type="Label" parent="." unique_id=1396966507]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -4
+text = "SPEED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="." unique_id=782564311]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -16.0
+offset_right = 21.0
+grow_vertical = 0
+text = "+10"
+
+[node name="Yep" type="TextureButton" parent="." unique_id=2109940394]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 20.0
+offset_bottom = 19.0
+texture_normal = SubResource("AtlasTexture_rh6aq")
+
+[node name="Nope" type="TextureButton" parent="." unique_id=1192573245]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 3.0
+offset_right = 36.0
+offset_bottom = 19.0
+texture_normal = SubResource("AtlasTexture_xuk70")
+
+[connection signal="pressed" from="Yep" to="." method="_on_yep_pressed"]
+[connection signal="pressed" from="Nope" to="." method="_on_nope_pressed"]

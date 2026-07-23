@@ -1,5 +1,5 @@
 class_name Menu
-extends Node2D
+extends Control
 
 signal switch_scene(scene_key: String)
 
