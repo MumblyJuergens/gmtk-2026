@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://b2gjm0u0af0c0"]
+
+[ext_resource type="Script" uid="uid://w0qt5c6e2g07" path="res://game/dude.gd" id="1_8xwlk"]
+[ext_resource type="Texture2D" uid="uid://c28arijen45xq" path="res://assets/spritesheet.png" id="1_suv0s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1evxn"]
+atlas = ExtResource("1_suv0s")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sopi"]
+atlas = ExtResource("1_suv0s")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psuy1"]
+atlas = ExtResource("1_suv0s")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr874"]
+atlas = ExtResource("1_suv0s")
+region = Rect2(32, 8, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbqtk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1evxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sopi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psuy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qr874")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbxio"]
+size = Vector2(7, 6)
+
+[node name="Dude" type="AnimatedSprite2D" unique_id=1012402599 groups=["dudes"]]
+sprite_frames = SubResource("SpriteFrames_hbqtk")
+animation = &"walking"
+frame = 3
+frame_progress = 0.7001895
+script = ExtResource("1_8xwlk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=455314639]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1718242270]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_xbxio")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

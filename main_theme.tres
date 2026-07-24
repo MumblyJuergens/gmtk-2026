@@ -19,6 +19,12 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.6036922, 0.8778732, 0.7220964, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbqtk"]
+bg_color = Color(0.371099, 0.2235808, 0.09302347, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uob17"]
+bg_color = Color(0.051270492, 0.6678052, 0.7967512, 1)
+
 [resource]
 default_font = ExtResource("1_470mv")
 default_font_size = 10
@@ -28,3 +34,5 @@ Button/styles/hover = SubResource("StyleBoxFlat_58jnp")
 Button/styles/normal = ExtResource("1_a2l2q")
 Button/styles/pressed = null
 Panel/styles/panel = ExtResource("1_a2l2q")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_hbqtk")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_uob17")

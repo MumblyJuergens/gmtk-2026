@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cvn2wdwh1jb47"]
 
 [ext_resource type="Texture2D" uid="uid://c28arijen45xq" path="res://assets/spritesheet.png" id="1_6afe8"]
+[ext_resource type="Script" uid="uid://do6u5rq81c8v2" path="res://game/base.gd" id="2_lm34a"]
+[ext_resource type="Theme" uid="uid://cgjvjqn1sdmfn" path="res://main_theme.tres" id="3_y78wq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbqtk"]
 atlas = ExtResource("1_6afe8")
@@ -9,11 +11,62 @@ region = Rect2(32, 32, 32, 32)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uob17"]
 height = 24.0
 
-[node name="Base" type="Sprite2D" unique_id=2012944100]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbxio"]
+atlas = ExtResource("1_6afe8")
+region = Rect2(33, 2, 5, 6)
+
+[node name="Base" type="Sprite2D" unique_id=2012944100 groups=["bases"]]
 texture = SubResource("AtlasTexture_hbqtk")
+script = ExtResource("2_lm34a")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1154234579]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1674973426]
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_uob17")
+
+[node name="Panel" type="Panel" parent="." unique_id=1992433413]
+offset_left = -34.0
+offset_top = -31.0
+offset_right = 34.0
+offset_bottom = -13.0
+theme = ExtResource("3_y78wq")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=869647491]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=233816375]
+layout_mode = 2
+
+[node name="MakeDude" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer" unique_id=107637687]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_xbxio")
+stretch_mode = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/MarginContainer/HBoxContainer" unique_id=1985455344]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="MakeDudeTimer" type="Timer" parent="." unique_id=1336928471]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/MakeDude" to="." method="_on_make_dude_pressed"]
+[connection signal="gui_input" from="Panel/MarginContainer/HBoxContainer/ProgressBar" to="." method="_on_progress_bar_gui_input"]
+[connection signal="timeout" from="MakeDudeTimer" to="." method="_on_make_dude_timer_timeout"]

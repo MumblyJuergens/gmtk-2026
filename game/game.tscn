@@ -31,6 +31,9 @@ position = Vector2(154, 148)
 [node name="StuffPile4" parent="StuffPiles" unique_id=930311537 instance=ExtResource("3_l8g03")]
 position = Vector2(170, 43)
 
+[node name="Dudes" type="Node2D" parent="." unique_id=440289813]
+unique_name_in_owner = true
+
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1726702326]
 
 [node name="GameTimer" parent="GameUI" unique_id=1433136440 instance=ExtResource("2_vasa2")]

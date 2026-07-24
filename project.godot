@@ -35,6 +35,18 @@ window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
 
+[global_group]
+
+dudes="All dudes, any team"
+stuff_piles="All sources of stuff, yours or otherwise"
+bases="All bases, yours or not"
+
+[layer_names]
+
+2d_physics/layer_1="dudes"
+2d_physics/layer_2="piles"
+2d_physics/layer_3="base"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
