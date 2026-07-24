@@ -5,6 +5,7 @@ const DUDE = preload("uid://b2gjm0u0af0c0")
 @onready var dudes: Node2D = %Dudes
 @onready var progress_bar: ProgressBar = %ProgressBar
 @onready var make_dude: TextureButton = %MakeDude
+@onready var label: Label = %Label
 
 @export var stuff: float = 50.0
 @export var team: int = 0
@@ -37,6 +38,7 @@ func _process(_delta: float) -> void:
 	else:
 		progress_bar.value = time - make_dude_timer.time_left
 	make_dude.disabled = stuff < cost
+	label.text = "%.2f" % [stuff]
 
 
 func _on_progress_bar_gui_input(event: InputEvent) -> void:

@@ -67,6 +67,17 @@ size_flags_vertical = 1
 [node name="MakeDudeTimer" type="Timer" parent="." unique_id=1336928471]
 unique_name_in_owner = true
 
+[node name="Label" type="Label" parent="." unique_id=1278632795]
+unique_name_in_owner = true
+offset_left = -34.0
+offset_top = -47.0
+offset_right = 34.0
+offset_bottom = -31.0
+theme = ExtResource("3_y78wq")
+text = "200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/MakeDude" to="." method="_on_make_dude_pressed"]
 [connection signal="gui_input" from="Panel/MarginContainer/HBoxContainer/ProgressBar" to="." method="_on_progress_bar_gui_input"]
 [connection signal="timeout" from="MakeDudeTimer" to="." method="_on_make_dude_timer_timeout"]

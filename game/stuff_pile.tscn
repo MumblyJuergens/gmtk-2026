@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c28arijen45xq" path="res://assets/spritesheet.png" id="1_dlyyf"]
 [ext_resource type="Script" uid="uid://vft6nhde7v2v" path="res://game/stuff_pile.gd" id="2_sl2nx"]
+[ext_resource type="Theme" uid="uid://cgjvjqn1sdmfn" path="res://main_theme.tres" id="3_punpq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4fuuu"]
 atlas = ExtResource("1_dlyyf")
@@ -20,3 +21,14 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2049525313]
 shape = SubResource("CircleShape2D_dxrkv")
+
+[node name="Label" type="Label" parent="." unique_id=1672480963]
+unique_name_in_owner = true
+offset_left = -31.0
+offset_top = -31.0
+offset_right = 31.0
+offset_bottom = -15.0
+theme = ExtResource("3_punpq")
+text = "200"
+horizontal_alignment = 1
+vertical_alignment = 1

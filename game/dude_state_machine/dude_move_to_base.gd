@@ -7,7 +7,10 @@ func exit(dude: Dude) -> void:
 	dude.stop()
 
 func process(dude: Dude, _delta: float) -> void:
-	if not dude.destination or not dude.destination is Base:
+	if not dude.destination:
+		push_warning("No destination is set")
+		return
+	if not dude.destination is Base:
 		push_warning("Moving to a base but none are set!")
 		return
 	
