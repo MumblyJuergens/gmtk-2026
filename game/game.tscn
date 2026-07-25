@@ -33,8 +33,6 @@ position = Vector2(170, 43)
 
 [node name="Base" parent="." unique_id=2012944100 instance=ExtResource("8_j8tme")]
 position = Vector2(437, 178)
-stuff = 50.0
-team = 0
 
 [node name="EnemyBase" parent="." unique_id=1970496943 instance=ExtResource("8_j8tme")]
 position = Vector2(37, 212)
@@ -46,8 +44,26 @@ unique_name_in_owner = true
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1726702326]
 
-[node name="GameTimer" parent="GameUI" unique_id=1433136440 instance=ExtResource("2_vasa2")]
+[node name="RoundTimer" parent="GameUI" unique_id=1433136440 instance=ExtResource("2_vasa2")]
 unique_name_in_owner = true
+text = "Round"
+repeats = true
+
+[node name="AutoplayTimer" parent="GameUI" unique_id=850654071 instance=ExtResource("2_vasa2")]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.5
+offset_top = -85.0
+offset_right = 42.5
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Autoplay"
+repeats = true
 
 [node name="Hand" parent="GameUI" unique_id=2121167984 instance=ExtResource("3_4fuuu")]
 unique_name_in_owner = true
