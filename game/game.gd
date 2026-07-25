@@ -2,17 +2,21 @@ class_name Game
 extends Node2D
 
 var stats: Stats
+var enemy_stats: Stats
 var game_round := 1
 @onready var game_timer: GameTimer = %GameTimer
 @onready var hand: Hand = %Hand
 @onready var stats_display: StatsDisplay = %StatsDisplay
 @onready var base: Base = $Base
+@onready var enemy_base: Base = $EnemyBase
 
 func _ready() -> void:	
 	stats = Stats.new()
+	enemy_stats = Stats.new()
 	game_timer.stats = stats
 	stats_display.stats = stats
 	base.stats = stats
+	enemy_base.stats = enemy_stats
 	DudeState.stats = stats
 	
 	EventBus.card_used.connect(stats.apply_card)
@@ -33,6 +37,8 @@ func start_round() -> void:
 	EventBus.stats_changed.emit()
 	game_timer.start()
 	hand.draw_cards()
+	base.go()
+	enemy_base.go()
 
 func _round_done() -> void:
 	game_round += 1

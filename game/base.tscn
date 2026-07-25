@@ -28,10 +28,11 @@ position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_uob17")
 
 [node name="Panel" type="Panel" parent="." unique_id=1992433413]
-offset_left = -34.0
-offset_top = -31.0
-offset_right = 34.0
-offset_bottom = -13.0
+unique_name_in_owner = true
+offset_left = -36.0
+offset_top = -30.0
+offset_right = 32.0
+offset_bottom = -12.0
 theme = ExtResource("3_y78wq")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=869647491]
@@ -70,14 +71,14 @@ unique_name_in_owner = true
 [node name="Label" type="Label" parent="." unique_id=1278632795]
 unique_name_in_owner = true
 offset_left = -34.0
-offset_top = -47.0
+offset_top = 11.0
 offset_right = 34.0
-offset_bottom = -31.0
+offset_bottom = 27.0
 theme = ExtResource("3_y78wq")
 text = "200"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/MakeDude" to="." method="_on_make_dude_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/MakeDude" to="." method="_start_breeding"]
 [connection signal="gui_input" from="Panel/MarginContainer/HBoxContainer/ProgressBar" to="." method="_on_progress_bar_gui_input"]
 [connection signal="timeout" from="MakeDudeTimer" to="." method="_on_make_dude_timer_timeout"]

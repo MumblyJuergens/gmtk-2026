@@ -7,15 +7,10 @@ var destination: Node2D
 var stuff := 0.0
 var task_timer := 0.0
 
-static var _team_modulations: Array[Color] = [
-	Color.BLUE,
-	Color.RED,
-]
-
 func setup(team_value: int, pos: Vector2i) -> void:
 	team = team_value
 	position = pos
-	modulate = _team_modulations[team]
+	modulate = SharedJunk.team_modulation(team)
 	state_machine.setup(self)
 
 func change_state(state: DudeMachine.State) -> void:
