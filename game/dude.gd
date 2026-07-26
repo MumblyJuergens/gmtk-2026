@@ -42,7 +42,12 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		var pile: StuffPile = parent
 		if pile == destination:
 			change_state(DudeMachine.State.COLLECTING)
-	if parent is Base and state_machine.current_state_type == DudeMachine.State.MOVE_TO_BASE:
-		var base: Base = parent
-		if base == destination:
-			change_state(DudeMachine.State.DEPOSITING)
+	if parent is Base:
+		if state_machine.current_state_type == DudeMachine.State.MOVE_TO_BASE:
+			var base: Base = parent
+			if base == destination:
+				change_state(DudeMachine.State.DEPOSITING)
+		elif state_machine.current_state_type == DudeMachine.State.MOVE_TO_BASE_ANGRILY:
+			var base: Base = parent
+			if base == destination:
+				change_state(DudeMachine.State.ATTACK_BASE_STATE)

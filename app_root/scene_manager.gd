@@ -10,6 +10,7 @@ var is_transitioning: bool = false
 var cached_scenes: Dictionary[String, PackedScene] = {
 	"menu": preload("res://menu/menu.tscn"),
 	"game": preload("res://game/game.tscn"),
+	"game_over": preload("uid://towljr3rwyv2"),
 }
 
 

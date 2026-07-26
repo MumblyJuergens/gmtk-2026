@@ -7,6 +7,10 @@ static func stats_for(dude: Dude) -> Stats:
 	return static_stats[dude.team]
 
 
+static func stats_for_base(base: Base) -> Stats:
+	return static_stats[base.team]
+
+
 @warning_ignore("unused_parameter")
 func enter(dude: Dude) -> void:
 	pass

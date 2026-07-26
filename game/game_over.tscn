@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://towljr3rwyv2"]
+
+[ext_resource type="Script" uid="uid://c14mpy6suflq" path="res://game/game_over.gd" id="1_7n8hs"]
+[ext_resource type="Theme" uid="uid://cgjvjqn1sdmfn" path="res://main_theme.tres" id="1_oeglh"]
+
+[node name="GameOver" type="Control" unique_id=363911157]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7n8hs")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=731213150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=945420899]
+layout_mode = 2
+theme = ExtResource("1_oeglh")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=413079631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=106644371]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=36688070]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=426374036]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Play Again?"
+
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

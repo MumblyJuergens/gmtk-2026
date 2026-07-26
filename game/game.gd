@@ -11,6 +11,8 @@ var game_round := 0
 @onready var base: Base = $Base
 @onready var enemy_base: Base = $EnemyBase
 
+signal switch_scene(key: String)
+
 
 func _ready() -> void:
 	stats = Stats.new()
@@ -36,6 +38,16 @@ func _ready() -> void:
 
 	# TODO: Remove, should be called after tutorial screen.
 	start_round()
+
+
+func _process(delta: float) -> void:
+	# TODO: Fix for multiple bases
+	if base.stuff < 0:
+		SharedJunk.last_result = false
+		switch_scene.emit("game_over")
+	if enemy_base.stuff < 0:
+		SharedJunk.last_result = true
+		switch_scene.emit("game_over")
 
 
 func _exit_tree() -> void:

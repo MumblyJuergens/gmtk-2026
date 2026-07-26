@@ -47,7 +47,6 @@ unique_name_in_owner = true
 [node name="RoundTimer" parent="GameUI" unique_id=1433136440 instance=ExtResource("2_vasa2")]
 unique_name_in_owner = true
 text = "Round"
-repeats = true
 
 [node name="AutoplayTimer" parent="GameUI" unique_id=850654071 instance=ExtResource("2_vasa2")]
 unique_name_in_owner = true
@@ -63,7 +62,6 @@ offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Autoplay"
-repeats = true
 
 [node name="Hand" parent="GameUI" unique_id=2121167984 instance=ExtResource("3_4fuuu")]
 unique_name_in_owner = true

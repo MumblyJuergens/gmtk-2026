@@ -4,7 +4,7 @@ extends DudeState
 func enter(dude: Dude) -> void:
 	var has_capacity := dude.stuff < Config.DUDE_COLLECTION_CAPACITY * stats_for(dude).strength
 	if has_capacity:
-		var stuff_pile = _find_stuff_pile(dude)
+		var stuff_pile := _find_stuff_pile(dude)
 		if not stuff_pile:
 			_find_base(dude)
 	else:
