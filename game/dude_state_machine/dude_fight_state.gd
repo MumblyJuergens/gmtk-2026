@@ -6,6 +6,7 @@ func process(dude: Dude, delta: float) -> void:
 		push_warning("Enemy isn't a dude")
 		return
 	var enemy: Dude = dude.destination
+	dude.play("fighting")
 	dude.task_timer += delta
 	var swing_speed := Config.DUDE_SWING_SPEED / stats_for(dude).speed
 	if dude.task_timer > swing_speed:

@@ -3,6 +3,22 @@
 [ext_resource type="Script" uid="uid://w0qt5c6e2g07" path="res://game/dude.gd" id="1_8xwlk"]
 [ext_resource type="Texture2D" uid="uid://c28arijen45xq" path="res://assets/spritesheet.png" id="1_suv0s"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_suv0s"]
+atlas = ExtResource("1_suv0s")
+region = Rect2(48, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rvjm"]
+atlas = ExtResource("1_suv0s")
+region = Rect2(56, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iol1x"]
+atlas = ExtResource("1_suv0s")
+region = Rect2(48, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w03j"]
+atlas = ExtResource("1_suv0s")
+region = Rect2(56, 0, 8, 8)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1evxn"]
 atlas = ExtResource("1_suv0s")
 region = Rect2(32, 0, 8, 8)
@@ -21,6 +37,28 @@ region = Rect2(32, 8, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hbqtk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suv0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rvjm")
+}],
+"loop": 1,
+"name": &"ascending",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iol1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w03j")
+}],
+"loop": 1,
+"name": &"fighting",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1evxn")
@@ -45,8 +83,6 @@ size = Vector2(7, 6)
 [node name="Dude" type="AnimatedSprite2D" unique_id=1012402599 groups=["dudes"]]
 sprite_frames = SubResource("SpriteFrames_hbqtk")
 animation = &"walking"
-frame = 3
-frame_progress = 0.7001895
 script = ExtResource("1_8xwlk")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=455314639]

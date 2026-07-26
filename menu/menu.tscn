@@ -68,4 +68,20 @@ Made with [url=https://godotengine.org]Godot[/url] which is MIT licensed. Game c
 
 No AI was used, at all, unconditionally."
 
+[node name="Label2" type="Label" parent="." unique_id=8921074]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = 24.5
+offset_right = 28.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_g18jx")
+text = "Version x.x"
+
 [connection signal="pressed" from="Begin" to="." method="_on_begin_pressed"]
