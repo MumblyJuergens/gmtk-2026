@@ -10,6 +10,7 @@ var game_round := 0
 @onready var stats_display: StatsDisplay = %StatsDisplay
 @onready var base: Base = $Base
 @onready var enemy_base: Base = $EnemyBase
+@onready var round_annouce_label: Label = %RoundAnnouceLabel
 
 signal switch_scene(key: String)
 
@@ -21,6 +22,7 @@ func _ready() -> void:
 	base.stats = stats
 	enemy_base.stats = enemy_stats
 	DudeState.static_stats = [stats, enemy_stats]
+	DudeMachine.new_dude_state = DudeMachine.State.IDLE_HARVEST
 
 	EventBus.card_used.connect(stats.apply_card)
 	EventBus.stats_changed.connect(stats_display.update_stats)
@@ -40,7 +42,7 @@ func _ready() -> void:
 	start_round()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# TODO: Fix for multiple bases
 	if base.stuff < 0:
 		SharedJunk.last_result = false
@@ -63,8 +65,28 @@ func start_round() -> void:
 	hand.draw_cards()
 	base.go()
 	enemy_base.go()
+	_annouce_round("Harvest Round!", Color.GREEN)
 
 
 func _round_done() -> void:
 	game_round += 1
 	DudeMachine.round_changed(game_round, get_tree())
+	if game_round % 2 == 0:
+		_annouce_round("Harvest Round!", Color.GREEN)
+	else:
+		_annouce_round("BATTLE Round!", Color.RED)
+
+
+func _annouce_round(text: String, color: Color) -> void:
+	round_annouce_label.text = text
+	round_annouce_label.label_settings.font_color = color
+	round_annouce_label.visible = true
+	var tween := get_tree().create_tween()
+	tween.tween_property(round_annouce_label, "modulate:a", 1, 0.5)
+	tween.tween_property(round_annouce_label, "position:y", -20.0, 0.5)
+	tween.parallel().tween_property(round_annouce_label, "modulate:a", 0, 0.5)
+	tween.tween_callback(
+		func() -> void:
+			round_annouce_label.position.y = 111.0
+			round_annouce_label.visible = false
+	)
