@@ -39,7 +39,6 @@ func _ready() -> void:
 
 	autoplay_timer.get_modifier = func() -> float: return stats.timer_speed
 
-	# TODO: Remove, should be called after tutorial screen.
 	start_round()
 
 

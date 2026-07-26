@@ -1,6 +1,7 @@
 class_name Dude
 extends AnimatedSprite2D
 
+@onready var hit_sfx: AudioStreamPlayer = $HitSFX
 @onready var state_machine: DudeMachine = DudeMachine.new()
 var team := 0
 var destination: Node2D
@@ -32,6 +33,10 @@ func _physics_process(delta: float) -> void:
 
 func round_changed() -> void:
 	state_machine.change_state(self, DudeMachine.new_dude_state)
+
+
+func play_hit_sfx() -> void:
+	hit_sfx.play()
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
