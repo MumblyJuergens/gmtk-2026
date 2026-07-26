@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://w0qt5c6e2g07" path="res://game/dude.gd" id="1_8xwlk"]
 [ext_resource type="Texture2D" uid="uid://c28arijen45xq" path="res://assets/spritesheet.png" id="1_suv0s"]
-[ext_resource type="AudioStream" uid="uid://b7agvi7t5hvnc" path="res://assets/swish_2.wav" id="3_1evxn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_suv0s"]
 atlas = ExtResource("1_suv0s")
@@ -92,9 +91,5 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1718242270]
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_xbxio")
-
-[node name="HitSFX" type="AudioStreamPlayer" parent="." unique_id=1906683979]
-stream = ExtResource("3_1evxn")
-bus = &"SFX"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

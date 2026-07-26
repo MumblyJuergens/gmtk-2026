@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 SharedJunk="*uid://dxh2sks0wxtoq"
 EventBus="*uid://c8pic2n3gf32e"
+AudioQueue="*uid://dcqv1iox33u87"
 
 [debug]
 

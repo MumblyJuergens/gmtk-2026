@@ -25,9 +25,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -26.0
-offset_top = -15.5
+offset_top = -57.5
 offset_right = 26.0
-offset_bottom = 15.5
+offset_bottom = -26.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -41,9 +41,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -109.0
-offset_top = 81.0
+offset_top = 39.0
 offset_right = 109.0
-offset_bottom = 113.0
+offset_bottom = 71.0
 grow_horizontal = 2
 theme = ExtResource("2_g18jx")
 text = "Count Down Repeatedly"
@@ -56,15 +56,15 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
-offset_top = -83.0
+offset_top = -120.0
 offset_right = -8.0
-offset_bottom = 2.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_g18jx")
 bbcode_enabled = true
 text = "Made for the [url=https://itch.io/jam/gmtk-jam-2026]GMTK Game Jam 2026[/url] by [url=https://mumbly-juergens.itch.io]Mumbly Juergens[/url].
-Made with [url=https://godotengine.org]Godot[/url] which is MIT licensed. Game code is available on [url=https://github.com/MumblyJuergens/gmtk-2026]GitHub[/url] and is MIT licensed. Fonts used are [url=https://github.com/TakWolf/fusion-pixel-font]Fusion Pixel[/url] and are under MIT and SIL OFL Licenses.
+Made with [url=https://godotengine.org]Godot[/url] which is MIT licensed. Game code is available on [url=https://github.com/MumblyJuergens/gmtk-2026]GitHub[/url] and is MIT licensed. Fonts used are [url=https://github.com/TakWolf/fusion-pixel-font]Fusion Pixel[/url] and are under MIT and SIL OFL Licenses. Music is [url=https://freemusicarchive.org/music/Sunsearcher/Sunsearcher_Spirit/04_-_Ambient_Cool/]Ambient Cool by Sunsearcher[/url] and is Creative Commons licensed. The single sound effect (hitting) is from [url=https://opengameart.org/content/battle-sound-effects]Ogrebane on OpenGameArt[/url] and is under Creative Commons.
 
 No AI was used, at all, unconditionally."
 
@@ -76,9 +76,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -28.0
-offset_top = 24.5
+offset_top = -17.5
 offset_right = 28.0
-offset_bottom = 47.5
+offset_bottom = 5.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_g18jx")
