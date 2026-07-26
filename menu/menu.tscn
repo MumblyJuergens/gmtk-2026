@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://dqcc1bmfpkao5" path="res://menu/menu.gd" id="1_j0t7f"]
 [ext_resource type="Theme" uid="uid://cgjvjqn1sdmfn" path="res://main_theme.tres" id="2_g18jx"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_hbqtk"]
+font_size = 20
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Menu" type="Control" unique_id=1809018704]
 layout_mode = 3
 anchors_preset = 15
@@ -29,5 +34,38 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_g18jx")
 text = "Begin"
+
+[node name="Label" type="Label" parent="." unique_id=1962985418]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.0
+offset_top = 81.0
+offset_right = 109.0
+offset_bottom = 113.0
+grow_horizontal = 2
+theme = ExtResource("2_g18jx")
+text = "Count Down Repeatedly"
+label_settings = SubResource("LabelSettings_hbqtk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1360288449]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -83.0
+offset_right = -8.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_g18jx")
+bbcode_enabled = true
+text = "Made for the [url=https://itch.io/jam/gmtk-jam-2026]GMTK Game Jam 2026[/url] by [url=https://mumbly-juergens.itch.io]Mumbly Juergens[/url].
+Made with [url=https://godotengine.org]Godot[/url] which is MIT licensed. Game code is available on [url=https://github.com/MumblyJuergens/gmtk-2026]GitHub[/url] and is MIT licensed. Fonts used are [url=https://github.com/TakWolf/fusion-pixel-font]Fusion Pixel[/url] and are under MIT and SIL OFL Licenses.
+
+No AI was used, at all, unconditionally."
 
 [connection signal="pressed" from="Begin" to="." method="_on_begin_pressed"]

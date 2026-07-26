@@ -16,8 +16,9 @@ signal switch_scene(key: String)
 
 
 func _ready() -> void:
+	get_tree().paused = true
 	stats = Stats.new()
-	enemy_stats = Stats.new()
+	enemy_stats = Stats.make_enemy_stats()
 	stats_display.stats = stats
 	base.stats = stats
 	enemy_base.stats = enemy_stats

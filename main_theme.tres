@@ -25,6 +25,38 @@ bg_color = Color(0.371099, 0.2235808, 0.09302347, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uob17"]
 bg_color = Color(0.051270492, 0.6678052, 0.7967512, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_py0i1"]
+bg_color = Color(0.7820715, 0.54367703, 0.24002305, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6036922, 0.8778732, 0.7220964, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_466ly"]
+bg_color = Color(0.7765791, 0.5446072, 0.2730285, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6036922, 0.8778732, 0.7220964, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52mx2"]
+bg_color = Color(0.7316215, 0.5695789, 0.28854102, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6036922, 0.8778732, 0.7220964, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2l2q"]
+bg_color = Color(0.41926494, 0.6173413, 0.81402904, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.22391611, 0.62702787, 0.6918316, 1)
+
 [resource]
 default_font = ExtResource("1_470mv")
 default_font_size = 10
@@ -36,3 +68,9 @@ Button/styles/pressed = null
 Panel/styles/panel = ExtResource("1_a2l2q")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_hbqtk")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_uob17")
+TutorialButton/base_type = &"Button"
+TutorialButton/styles/hover = SubResource("StyleBoxFlat_py0i1")
+TutorialButton/styles/normal = SubResource("StyleBoxFlat_466ly")
+TutorialButton/styles/pressed = SubResource("StyleBoxFlat_52mx2")
+TutorialPanel/base_type = &"Panel"
+TutorialPanel/styles/panel = SubResource("StyleBoxFlat_a2l2q")

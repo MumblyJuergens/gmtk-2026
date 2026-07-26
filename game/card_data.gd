@@ -1,34 +1,42 @@
 class_name CardData
 
-enum Effect { SPEED, STRENGTH, DEFENCE, SPAWN_TIME, SPAWN_COST, AUTOPLAY_TIME, }
-enum EffectOp { ADD, MULTIPLY, }
+enum Effect { SPEED, STRENGTH, DEFENCE, SPAWN_TIME, SPAWN_COST, AUTOPLAY_TIME }
+enum EffectOp { ADD, MULTIPLY }
 
 var effect: Effect
 var effect_op: EffectOp
 var amount: float
 
+
 static func random() -> CardData:
 	var card_data := CardData.new()
 	card_data.effect = _random_effect()
 	card_data.effect_op = _random_effect_op()
-	card_data.amount = _random_amount()
+	card_data.amount = _random_amount(card_data.effect_op)
 	return card_data
+
 
 class WeightedEffect extends RefCounted:
 	var effect: Effect
 	var weight: float
 	var accum_weight: float = 0.0
+
+
 	func _init(e: Effect, w: float) -> void:
 		effect = e
 		weight = w
+
 
 class WeightedEffectOp extends RefCounted:
 	var effect_op: EffectOp
 	var weight: float
 	var accum_weight: float = 0.0
+
+
 	func _init(e: EffectOp, w: float) -> void:
 		effect_op = e
 		weight = w
+
 
 static func _static_init() -> void:
 	_total_weight_effect = 0.0
@@ -39,6 +47,7 @@ static func _static_init() -> void:
 	for we in _effect_op_chances:
 		_total_weight_effect_op += we.weight
 		we.accum_weight = _total_weight_effect_op
+
 
 static var _total_weight_effect: float = 0.0
 static var _total_weight_effect_op: float = 0.0
@@ -56,6 +65,7 @@ static var _effect_op_chances: Array[WeightedEffectOp] = [
 	WeightedEffectOp.new(EffectOp.MULTIPLY, 1.0),
 ]
 
+
 static func _random_effect() -> Effect:
 	var roll := SharedJunk.rng.randf_range(0.0, _total_weight_effect)
 	for we in _effect_chances:
@@ -63,7 +73,8 @@ static func _random_effect() -> Effect:
 			return we.effect
 	push_warning("Default effect chosen, maths is bad")
 	return Effect.SPEED
-	
+
+
 static func _random_effect_op() -> EffectOp:
 	var roll := SharedJunk.rng.randf_range(0.0, _total_weight_effect_op)
 	for we in _effect_op_chances:
@@ -71,6 +82,10 @@ static func _random_effect_op() -> EffectOp:
 			return we.effect_op
 	push_warning("Default effect op chosen, maths is bad")
 	return EffectOp.ADD
-	
-static func _random_amount() -> float:
-	return SharedJunk.rng.randf_range(0.5, 2.0)
+
+
+static func _random_amount(op: EffectOp) -> float:
+	if op == EffectOp.ADD:
+		return SharedJunk.rng.randf_range(0.2, 0.8)
+	else: # MUL
+		return SharedJunk.rng.randf_range(0.75, 1.25)

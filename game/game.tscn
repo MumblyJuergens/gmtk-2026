@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c3a1xyyuetwwp" path="res://game/card_deck.tscn" id="5_dxrkv"]
 [ext_resource type="PackedScene" uid="uid://cvn2wdwh1jb47" path="res://game/base.tscn" id="8_j8tme"]
 [ext_resource type="FontFile" uid="uid://0pk10em1s1m4" path="res://fonts/fusion-pixel-10px-proportional-kr-latin-400-normal.woff2" id="9_l8g03"]
+[ext_resource type="PackedScene" uid="uid://ctpq0udbewnko" path="res://game/tutorial.tscn" id="10_j8tme"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hbqtk"]
 font = ExtResource("9_l8g03")
@@ -41,10 +42,11 @@ position = Vector2(170, 43)
 
 [node name="Base" parent="." unique_id=2012944100 instance=ExtResource("8_j8tme")]
 position = Vector2(437, 178)
+stuff = 100.0
 
 [node name="EnemyBase" parent="." unique_id=1970496943 instance=ExtResource("8_j8tme")]
 position = Vector2(37, 212)
-stuff = 5000.0
+stuff = 10000.0
 team = 1
 
 [node name="Dudes" type="Node2D" parent="." unique_id=440289813]
@@ -97,3 +99,8 @@ text = "Harvest Round!"
 label_settings = SubResource("LabelSettings_hbqtk")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1185169179]
+layer = 2
+
+[node name="Tutorial" parent="CanvasLayer" unique_id=305237756 instance=ExtResource("10_j8tme")]
