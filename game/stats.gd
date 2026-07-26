@@ -17,9 +17,9 @@ func apply_card(card_data: CardData) -> void:
 		CardData.Effect.SPEED: speed = op.call(speed, card_data.amount)
 		CardData.Effect.STRENGTH: strength = op.call(strength, card_data.amount)
 		CardData.Effect.DEFENCE: defence = op.call(defence, card_data.amount)
-		CardData.Effect.SPAWN_SPEED: spawn_speed = op.call(spawn_speed, card_data.amount)
+		CardData.Effect.SPAWN_TIME: spawn_speed = op.call(spawn_speed, card_data.amount)
 		CardData.Effect.SPAWN_COST: spawn_cost = op.call(spawn_cost, card_data.amount)
-		CardData.Effect.TIMER_SPEED: timer_speed = op.call(timer_speed, card_data.amount)
+		CardData.Effect.AUTOPLAY_TIME: timer_speed = op.call(timer_speed, card_data.amount)
 	EventBus.stats_changed.emit()
 
 func _add_me(variable: float, amount: float) -> float:

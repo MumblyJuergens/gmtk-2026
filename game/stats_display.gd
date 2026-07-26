@@ -10,15 +10,21 @@ extends Panel
 
 var stats: Stats
 
+
 func update_stats() -> void:
 	if not stats:
 		push_error("Stats must be set to display them!")
 	set_label(speed_label, stats.speed)
 	set_label(strength_label, stats.strength)
 	set_label(defence_label, stats.defence)
-	set_label(spawn_speed_label, stats.spawn_speed)
-	set_label(spawn_cost_label, stats.spawn_cost)
+	set_label(spawn_speed_label, stats.spawn_speed, false)
+	set_label(spawn_cost_label, stats.spawn_cost, false)
 	set_label(timer_speed_label, stats.timer_speed)
 
-func set_label(label: Label, value: float) -> void:
+
+func set_label(label: Label, value: float, high_good: bool = true) -> void:
 	label.text = "%2.2f" % [value]
+	if high_good:
+		label.modulate = Color.GREEN if value >= 1.0 else Color.RED
+	else:
+		label.modulate = Color.RED if value >= 1.0 else Color.GREEN

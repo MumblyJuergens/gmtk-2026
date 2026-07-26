@@ -3,6 +3,11 @@
 [ext_resource type="Theme" uid="uid://cgjvjqn1sdmfn" path="res://main_theme.tres" id="1_exmvx"]
 [ext_resource type="Texture2D" uid="uid://c28arijen45xq" path="res://assets/spritesheet.png" id="2_5ol3u"]
 [ext_resource type="Script" uid="uid://bn1wjnyq8s0u6" path="res://game/card_ui.gd" id="2_xuk70"]
+[ext_resource type="FontFile" uid="uid://c2baddbmm80sj" path="res://fonts/fusion-pixel-8px-proportional-sc-latin-400-normal.woff2" id="3_xuk70"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pb671"]
+font = ExtResource("3_xuk70")
+font_size = 8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rh6aq"]
 atlas = ExtResource("2_5ol3u")
@@ -21,8 +26,8 @@ atlas = ExtResource("2_5ol3u")
 region = Rect2(16, 16, 16, 16)
 
 [node name="CardUI" type="Panel" unique_id=1235242046]
-custom_minimum_size = Vector2(40, 60)
-offset_right = 40.0
+custom_minimum_size = Vector2(48, 60)
+offset_right = 48.0
 offset_bottom = 60.0
 theme = ExtResource("1_exmvx")
 script = ExtResource("2_xuk70")
@@ -35,7 +40,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_spacing = -4
-text = "SPEED"
+text = "STRENGTH"
+label_settings = SubResource("LabelSettings_pb671")
 horizontal_alignment = 1
 vertical_alignment = 1
 

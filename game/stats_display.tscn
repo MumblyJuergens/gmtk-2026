@@ -6,7 +6,7 @@
 [node name="StatsDisplay" type="Panel" unique_id=296256293]
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 110.0
+offset_right = 117.0
 offset_bottom = 135.0
 theme = ExtResource("1_akwci")
 script = ExtResource("2_yxo0d")
@@ -60,7 +60,7 @@ text = "0.00"
 
 [node name="Label8" type="Label" parent="MarginContainer/GridContainer" unique_id=1003749891]
 layout_mode = 2
-text = "Spawn Speed"
+text = "Spawn Timer"
 horizontal_alignment = 2
 
 [node name="SpawnSpeedLabel" type="Label" parent="MarginContainer/GridContainer" unique_id=456482044]
@@ -80,7 +80,7 @@ text = "0.00"
 
 [node name="Label12" type="Label" parent="MarginContainer/GridContainer" unique_id=282853430]
 layout_mode = 2
-text = "Timer Speed"
+text = "Autoplay Timer"
 horizontal_alignment = 2
 
 [node name="TimerSpeedLabel" type="Label" parent="MarginContainer/GridContainer" unique_id=1625807983]
