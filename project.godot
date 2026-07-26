@@ -12,10 +12,14 @@ config_version=5
 
 config/name="GMTK26 Count Down Repeatedly"
 config/description="Harvest, then battle, then repeat. They have money, but you have decision making powers!"
-config/version="0.1.1"
+config/version="0.1.2"
 run/main_scene="uid://ctae7kpgvna66"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://ccv5k8fkee8n7"
 
 [autoload]
 
